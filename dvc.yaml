@@ -26,3 +26,11 @@ stages:
     outs:
     - data/preprocessed_data/X_test_scaled.csv
     - data/preprocessed_data/X_train_scaled.csv
+  evaluation:
+    cmd: python src/models/evaluation.py
+    deps:
+    - models/trained_model.joblib
+    - src/models/evaluation.py
+    metrics:
+    - metrics/metrics.json:
+        cache: false
