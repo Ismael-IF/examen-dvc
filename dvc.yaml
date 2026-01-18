@@ -18,11 +18,11 @@ stages:
     outs:
     - models/trained_model.joblib
   normalize:
-    cmd: python src/data/normalize.py
+    cmd: python src/data/data_normalize.py
     deps:
     - data/preprocessed_data/X_test.csv
     - data/preprocessed_data/X_train.csv
-    - src/data/normalize.py
+    - src/data/data_normalize.py
     outs:
     - data/preprocessed_data/X_test_scaled.csv
     - data/preprocessed_data/X_train_scaled.csv
