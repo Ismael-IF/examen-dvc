@@ -1,0 +1,21 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python src/data/data_split.py
+    deps:
+    - path: data/raw
+      hash: md5
+      md5: 4a7aefaa6751c8a55195862552fc4869.dir
+      size: 333839
+      nfiles: 2
+    - path: src/data/data_split.py
+      hash: md5
+      md5: 68a36ac30197ed1f97ef6b96d9842793
+      size: 894
+      isexec: true
+    outs:
+    - path: data/preprocessed_data
+      hash: md5
+      md5: 98c1f08a2d07a6439970a35ac967be92.dir
+      size: 294499
+      nfiles: 4

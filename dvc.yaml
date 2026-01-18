@@ -1,0 +1,15 @@
+stages:
+  prepare:
+    cmd: python src/data/data_split.py
+    deps:
+    - data/raw
+    - src/data/data_split.py
+    outs:
+    - data/preprocessed_data
+  train:
+    cmd: python src/models/train_model.py
+    deps:
+    - data/preprocessed_data
+    - src/models/train_model.py
+    outs:
+    - models/trained_model.joblib
